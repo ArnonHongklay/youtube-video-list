@@ -1,0 +1,9 @@
+.description {
+    height: 60px;
+    font-size: 14px;
+    overflow: hidden
+}
+
+.card {
+    margin-top: 30px
+}
