@@ -15,4 +15,10 @@ yarn install
 yarn start
 ```
 
-Demo: https://youtube-video-list-7942f.firebaseapp.com
+Demo here: https://youtube-video-list-7942f.firebaseapp.com
+
+## Hi
+
+I used react for display video from youtube channel "ThailandStartUp". I get data from youtube api. and I used firebase hosting for show you guys
+
+It very easy. I just read this page only https://developers.google.com/youtube/v3/docs/playlistItems/list 
