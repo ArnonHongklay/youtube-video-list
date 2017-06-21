@@ -2,7 +2,7 @@ function fetchYoutubeAPIWithChannel() {
   let id = 'UUy_85vQ6tUvYvNR_B2htuTw';
   let token = 'AIzaSyBf-beJ5_F6xRVAGlHgfmbBOEfq-zIYbHc';
   return fetch(
-    `https://www.googleapis.com/youtube/v3/playlistItems?part=contentDetails%2C+snippet&playlistId=${id}&key=${token}`,
+    `https://www.googleapis.com/youtube/v3/playlistItems?part=contentDetails%2C+snippet&maxResults=25&playlistId=${id}&key=${token}`,
   ).then(response => response.json());
 }
 

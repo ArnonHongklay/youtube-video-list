@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-class Header extends React.Component {
+class Header extends Component {
   render() {
     return (
       <div className="row">
         <div className="col-sm-12">
           <h1>
-            <a href="#">Tech Recruiting - Coding Problems</a>
+            <Link to="/">Tech Recruiting - Coding Problems</Link>
           </h1>
           <h2>API Access, File I/O and Serialization</h2>
         </div>

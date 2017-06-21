@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { fetchVideoList } from 'api';
-// import VideoListItem from './VideoListItem';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 class VideoList extends Component {
   state = {
@@ -20,69 +20,71 @@ class VideoList extends Component {
       items = [
         {
           kind: 'youtube#playlistItem',
-          etag: '"m2yskBQFythfE4irbTIeOgYYfBU/DGla5VREMtWVirZ80bWJiZelC90"',
-          id: 'VVVfeDVYRzFPVjJQNnVaWjVGU005VHR3LlFrSDNEcUc5cEpz',
+          etag: '"m2yskBQFythfE4irbTIeOgYYfBU/XbF_ZcuREWg1Pe76oGl-wAV_75k"',
+          id: 'VVV5Xzg1dlE2dFV2WXZOUl9CMmh0dVR3LkZnLW9YYUZxelFB',
           snippet: {
-            publishedAt: '2017-06-16T21:00:42.000Z',
-            channelId: 'UC_x5XG1OV2P6uZZ5FSM9Ttw',
-            title: 'The Developer Show (TL;DR 074)',
+            publishedAt: '2017-06-15T07:02:28.000Z',
+            channelId: 'UCy_85vQ6tUvYvNR_B2htuTw',
+            title: 'Highlight Startup 2017 KhonKaen Mekong Connect',
             description:
-              'Android O APIs are final - https://goo.gl/Uy6PK3\nGoogle Play Billing Library - https://goo.gl/e8tNCg\nIntroducing reCAPTCHA Android API - https://goo.gl/3DjIiA\nIntroducing Blockly 1.0 for Android and iOS - https://goo.gl/tFyg2T\nMaking Dynamic Links Easier - https://goo.gl/75QygK\nApp Engine update - https://goo.gl/PfH369\nSpinnaker 1.0 - https://goo.gl/mCijEG\n \nThe Developer Show is where you can stay up to date on all the latest Google Developer news, straight from the experts. \n \nHave a question? Use #AskDevShow to let us know!\n \nSubscribe to the Google Developers Channel for more DevShow! http://goo.gl/mQyv5',
+              'STARTUP THAILAND 2017 : MEKONG CONNECT\n\nStartup Thailand Special Talk “สตาร์ทอัพกับบริษัทใหญ่และ CVC แข่งขัน หรือร่วมสร้างสรรค์?” \nโดย คุณชวิน ศุภวงศ์ Co-founder, Food Story\n\n9 - 10 มิถุนายน 2560 ณ ศูนย์ประชุมอเนกประสงค์กาญจนาภิเษก มหาวิทยาลัยขอนแก่น จ.ขอนแก่น\n\nMore info --\nWebsite : http://startupthailand.org/live/\nFacebook : https://www.facebook.com/ThailandStartup\nhttp://startupthailand.org/',
             thumbnails: {
               default: {
-                url: 'https://i.ytimg.com/vi/QkH3DqG9pJs/default.jpg',
+                url: 'https://i.ytimg.com/vi/Fg-oXaFqzQA/default.jpg',
                 width: 120,
                 height: 90,
               },
               medium: {
-                url: 'https://i.ytimg.com/vi/QkH3DqG9pJs/mqdefault.jpg',
+                url: 'https://i.ytimg.com/vi/Fg-oXaFqzQA/mqdefault.jpg',
                 width: 320,
                 height: 180,
               },
               high: {
-                url: 'https://i.ytimg.com/vi/QkH3DqG9pJs/hqdefault.jpg',
+                url: 'https://i.ytimg.com/vi/Fg-oXaFqzQA/hqdefault.jpg',
                 width: 480,
                 height: 360,
               },
               standard: {
-                url: 'https://i.ytimg.com/vi/QkH3DqG9pJs/sddefault.jpg',
+                url: 'https://i.ytimg.com/vi/Fg-oXaFqzQA/sddefault.jpg',
                 width: 640,
                 height: 480,
               },
               maxres: {
-                url: 'https://i.ytimg.com/vi/QkH3DqG9pJs/maxresdefault.jpg',
+                url: 'https://i.ytimg.com/vi/Fg-oXaFqzQA/maxresdefault.jpg',
                 width: 1280,
                 height: 720,
               },
             },
-            channelTitle: 'Google Developers',
-            playlistId: 'UU_x5XG1OV2P6uZZ5FSM9Ttw',
+            channelTitle: 'StartupThailand',
+            playlistId: 'UUy_85vQ6tUvYvNR_B2htuTw',
             position: 0,
             resourceId: {
               kind: 'youtube#video',
-              videoId: 'QkH3DqG9pJs',
+              videoId: 'Fg-oXaFqzQA',
             },
           },
           contentDetails: {
-            videoId: 'QkH3DqG9pJs',
-            videoPublishedAt: '2017-06-16T21:00:42.000Z',
+            videoId: 'Fg-oXaFqzQA',
+            videoPublishedAt: '2017-06-15T07:02:28.000Z',
           },
         },
       ],
     } = this.state.videos;
-    console.log(items);
+
     const videoItems = items.map(item => {
       return (
         <div className="col-sm-4">
           <div className="card">
             <img
               className="card-img-top"
-              src={item.snippet.thumbnails.standard.url}
+              src={item.snippet.thumbnails.medium.url}
               alt="Card image cap"
               height="240"
             />
             <div className="card-block">
-              <h4 className="card-title">{item.snippet.title}</h4>
+              <Link to={item.contentDetails.videoId}>
+                <h4 className="card-title">{item.snippet.title}</h4>
+              </Link>
               <p className="card-text description">
                 {item.snippet.description}
               </p>

@@ -1,9 +1,9 @@
-import React from 'react';
-import VideoList from 'components/VideoList';
+import React, { Component } from 'react';
+import VideoDetail from 'components/VideoDetail';
 
-class Video extends React.Component {
+class Video extends Component {
   render() {
-    return <VideoList />;
+    return <VideoDetail video={this.props.match.params.id} />;
   }
 }
 
